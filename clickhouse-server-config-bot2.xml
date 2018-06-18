@@ -2,14 +2,17 @@
         <!-- Test only shard config for testing distributed storage -->
         <gongo_bot>
             <shard>
-                <replica>
-                    <host>bot3.gongo.io</host>
-                    <port>9000</port>
-                </replica>
-            </shard>
-            <shard>
+                <internal_replication>true</internal_replication>
                 <replica>
                     <host>bot1.gongo.io</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>bot2.gongo.io</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>bot3.gongo.io</host>
                     <port>9000</port>
                 </replica>
             </shard>
