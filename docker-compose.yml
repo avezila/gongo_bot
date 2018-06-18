@@ -9,6 +9,9 @@ services:
     restart: always
     volumes:
       - /data/zoo_conf:/conf/
+      - ./zookeeper-configuration.xsl:/conf/configuration.xsl
+      - ./zookeeper-log4j.properties:/conf/log4j.properties
+      - /data/zookeeper_data/:/data/
       - /data/zookeeper_data/:/data/
     environment:
       ZOO_MY_ID: $HOST_NUMBER
