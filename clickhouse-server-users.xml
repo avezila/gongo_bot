@@ -66,6 +66,7 @@
             -->
             <networks replace="replace">
                 <ip>::1</ip>
+                <ip>::ffff:0:0/96</ip>
                 <ip>127.0.0.1</ip>
                 <ip>159.69.33.168</ip>
                 <ip>159.69.12.134</ip>
@@ -84,6 +85,7 @@
             <password></password>
             <networks replace="replace">
                 <ip>::1</ip>
+                <ip>::ffff:0:0/96</ip>
                 <ip>127.0.0.1</ip>
                 <ip>159.69.33.168</ip>
                 <ip>159.69.12.134</ip>
