@@ -244,7 +244,7 @@
     <!-- Uncomment if you want data to be compressed 30-100% better.
          Don't do that if you just started using ClickHouse.
       -->
-    <compression incl="clickhouse_compression">
+    <compression optional="true" incl="clickhouse_compression">
         <!--
         <!- - Set of variants. Checked in order. Last matching case wins. If nothing matches, lz4 will be used. - ->
         <case>

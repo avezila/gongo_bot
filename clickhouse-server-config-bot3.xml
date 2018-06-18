@@ -1,4 +1,4 @@
-    <remote_servers incl="clickhouse_remote_servers">
+    <remote_servers>
         <!-- Test only shard config for testing distributed storage -->
         <gongo_bot>
             <shard>
