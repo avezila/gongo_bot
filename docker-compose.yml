@@ -27,6 +27,7 @@ services:
     restart: always
     volumes:
       - ./clickhouse-server-config.xml:/etc/clickhouse-server/config.xml
+      - ./clickhouse-server-users.xml:/etc/clickhouse-server/users.xml
       - /data/clickhouse/:/var/lib/clickhouse
       - /data/clickhouse-log/:/var/log/clickhouse-server/
     environment:
