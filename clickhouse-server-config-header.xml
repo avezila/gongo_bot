@@ -51,7 +51,7 @@
     <!-- <listen_try>0</listen_try> -->
 
     <!-- Allow listen on same address:port -->
-    <!-- <listen_reuse_port>0</listen_reuse_port> -->
+    <listen_reuse_port>1</listen_reuse_port>
 
     <!-- <listen_backlog>64</listen_backlog> -->
 
