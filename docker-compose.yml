@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  zookeeper:
+    image: zookeeper:3.5
+    restart: always
+    hostname: $HOST_NAME
+    network_mode: host
+    restart: always
+    volumes:
+      - /data/zoo.cfg:/conf/zoo.cfg
+      - /data/zookeeper_data/:/data/
+    environment:
+      ZOO_MY_ID: $HOST_NUMBER
+      ZOO_SERVERS: server.$HOST_NUMBER=0.0.0.0:2888:3888 server.$SECOND_NUMBER=$SECOND_HOST:2888:3888 server.$THIRD_NUMBER=$THIRD_HOST:2888:3888
+  clickhouse: 
+    image: yandex/clickhouse-server:1.1
+    ulimit:
+      nofile: 262144:262144
+    restart: always
+    network_mode: host
+    restart: always
+    volumes:
+      - ./clickhouse-server-config.xml:/etc/clickhouse-server/config.xml
+      - /data/clickhouse/:/var/lib/clickhouse
+      - /data/clickhouse-log/:/var/log/clickhouse-server/
+    environment:
+      ZOO_MY_ID: $HOST_NUMBER

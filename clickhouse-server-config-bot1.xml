@@ -1,0 +1,32 @@
+    <remote_servers incl="clickhouse_remote_servers">
+        <!-- Test only shard config for testing distributed storage -->
+        <gongo_bot>
+            <shard>
+                <replica>
+                    <host>bot2.gongo.io</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+            <shard>
+                <replica>
+                    <host>bot3.gongo.io</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </gongo_bot>
+    </remote_servers>
+    <zookeeper>
+        <node index="1">
+            <host>bot1.gongo.io</host>
+            <port>2181</port>
+        </node>
+        <node index="2">
+            <host>bot2.gongo.io</host>
+            <port>2181</port>
+        </node>
+        <node index="3">
+            <host>bot3.gongo.io</host>
+            <port>2181</port>
+        </node>
+    </zookeeper>
+</yandex>
