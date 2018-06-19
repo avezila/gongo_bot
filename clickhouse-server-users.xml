@@ -43,7 +43,9 @@
                  Execute: PASSWORD=$(base64 < /dev/urandom | head -c8); echo "$PASSWORD"; echo -n "$PASSWORD" | sha256sum | tr -d '-'
                  In first line will be password and in second - corresponding SHA256.
             -->
-            <password></password>
+            <!-- <password></password> -->
+            <password_sha256_hex>0be72cfdfc47fa225436384e86f940a5b7e7cb5e9d300a9d6e6c09bb93421672</password_sha256_hex>
+            
 
             <!-- List of networks with open access.
 
@@ -65,12 +67,7 @@
                  All results of DNS requests are cached till server restart.
             -->
             <networks replace="replace">
-                <ip>::1</ip>
-                <ip>::ffff:0:0/96</ip>
-                <ip>127.0.0.1</ip>
-                <ip>159.69.33.168</ip>
-                <ip>159.69.12.134</ip>
-                <ip>159.69.33.152</ip>
+                <ip>::/0</ip>
             </networks>
 
             <!-- Settings profile for user. -->
@@ -82,14 +79,10 @@
 
         <!-- Example of user with readonly access. -->
         <readonly>
-            <password></password>
+            <!-- <password></password> -->
+            <password_sha256_hex>0be72cfdfc47fa225436384e86f940a5b7e7cb5e9d300a9d6e6c09bb93421672</password_sha256_hex>
             <networks replace="replace">
-                <ip>::1</ip>
-                <ip>::ffff:0:0/96</ip>
-                <ip>127.0.0.1</ip>
-                <ip>159.69.33.168</ip>
-                <ip>159.69.12.134</ip>
-                <ip>159.69.33.152</ip>
+                <ip>::/0</ip>
             </networks>
             <profile>readonly</profile>
             <quota>default</quota>
